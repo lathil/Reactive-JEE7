@@ -1,0 +1,92 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'
+
+
+sourceCompatibility = '1.7'
+targetCompatibility = '1.7'
+
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+ext.libraryVersions = [
+	javaee : '7.0',
+	wildfly : '8.1.0.Final',
+	junit : '4.11',
+	arquillian : '1.1.5.Final',
+	shrinkWrapResolverGradle: '2.2.0-beta-1'
+	]
+
+
+version = '1.0'
+war {
+    manifest {
+        attributes 'Implementation-Title': 'Reactive-JEE7', 'Implementation-Version': version
+    }
+}
+
+repositories {
+	maven { url 'https://repository.jboss.org/nexus/content/groups/public-jboss' }
+	maven { url 'https://repository.jboss.org/nexus/content/repositories' }
+	maven { url 'https://repository.jboss.org/nexus/content/repositories/thirdparty-releases' }
+	maven { url 'http://repo.gradle.org/gradle/libs-releases-local'}
+    mavenCentral()
+}
+
+dependencies {
+   providedCompile 'javax.websocket:javax.websocket-api:1.1'
+   providedCompile 'javax.enterprise:cdi-api:1.2'
+   //compile 'javax.json:javax.json-api:1.0'
+   compile 'com.fasterxml.jackson.core:jackson-core:2.4.4'
+   compile 'com.fasterxml.jackson.core:jackson-annotations:2.4.4'
+   compile 'com.fasterxml.jackson.core:jackson-databind:2.4.4'
+   compile 'io.reactivex:rxjava:1.0.0'
+   compile 'log4j:log4j:1.2.17'
+  // compile 'org.apache.logging.log4j:log4j-api:2.2'
+   //compile 'org.apache.logging.log4j:log4j-core:2.2'
+   runtime 'org.ehcache:jcache:1.0.1'
+   
+   //compile 'org.jsr107.ri:cache-annotations-ri-cdi:1.0.0'
+   compile 'javax.cache:cache-api:1.0.0'
+   testCompile 'junit:junit:4.8.1'
+  // testCompile 'org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-depchain:2.1.0'
+   testCompile "org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-gradle-depchain:${libraryVersions.shrinkWrapResolverGradle}"
+  
+   
+   testCompile "org.jboss.arquillian.junit:arquillian-junit-container:${libraryVersions.arquillian}"
+   testCompile "org.jboss.arquillian.protocol:arquillian-protocol-servlet:${libraryVersions.arquillian}"
+   testCompile "org.jboss.arquillian.container:arquillian-container-spi:${libraryVersions.arquillian}"
+   testCompile "org.jboss.arquillian.container:arquillian-container-test-spi:${libraryVersions.arquillian}"
+   
+   testCompile "org.wildfly:wildfly-arquillian-container-managed:${libraryVersions.wildfly}"
+   
+   //runtime "org.slf4j:slf4j-log4j12:1.7.5"
+   
+   //testRuntime "org.wildfly:wildfly-arquillian-container-embedded:${libraryVersions.wildfly}"
+   //testRuntime "org.wildfly:wildfly-embedded:${libraryVersions.wildfly}"
+ 
+}
+
+
+test {
+	jvmArgs '-XX:MaxPermSize=256m'
+  
+	/**
+	 * Installation of JBOSS to use for testing, this can be set here
+	 * or in the arquillian.xml.
+	 */
+	environment 'JBOSS_HOME', "D:/opt/wildfly-8.2.0.Final"
+	/**
+	 * WildFly embedded default logging
+	 */
+	systemProperty 'java.util.logging.manager', 'org.jboss.logmanager.LogManager'
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+}
+

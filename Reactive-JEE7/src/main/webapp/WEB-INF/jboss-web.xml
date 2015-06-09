@@ -1,0 +1,3 @@
+<jboss-web>
+    <context-root>/Reactive-JEE7</context-root>
+</jboss-web>

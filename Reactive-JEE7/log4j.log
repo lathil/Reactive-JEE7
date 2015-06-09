@@ -1,0 +1,52 @@
+08:42:37,969 DEBUG [ClientEndPoint] Client end point connected
+08:42:37,969 DEBUG [ReactiveEndPoint] Server session opened. Id: jcDrJ7EbMQ5VKuAGEbyvgf4Q
+08:42:38,000 DEBUG [ReactiveTest] Test client: message subscribe sent !
+08:42:38,031 DEBUG [ReactiveEndPoint] Server message received. Session Id: jcDrJ7EbMQ5VKuAGEbyvgf4Q, message type: subscribe
+08:42:38,047 DEBUG [ConfigurationFactory] Configuring ehcache from URL: vfs:/D:/Users/lathil/EclipseKepler/Workspaces/Reactive/Reactive-JEE7/content/92df3c94-3009-48df-9c40-dde474c5fffd.war/WEB-INF/classes/ehcache.xml
+08:42:38,047 DEBUG [ConfigurationFactory] Configuring ehcache from InputStream
+08:42:38,062 DEBUG [BeanHandler] Ignoring ehcache attribute xmlns:xsi
+08:42:38,062 DEBUG [BeanHandler] Ignoring ehcache attribute xsi:noNamespaceSchemaLocation
+08:42:38,062 DEBUG [DiskStoreConfiguration] Disk Store Path: c:\temp\
+08:42:38,093 DEBUG [PropertyUtil] propertiesString is null.
+08:42:38,093 DEBUG [ConfigurationHelper] No CacheManagerEventListenerFactory class specified. Skipping...
+08:42:38,140 DEBUG [Cache] No BootstrapCacheLoaderFactory class specified. Skipping...
+08:42:38,156 DEBUG [Cache] CacheWriter factory not configured. Skipping...
+08:42:38,156 DEBUG [ConfigurationHelper] No CacheExceptionHandlerFactory class specified. Skipping...
+08:42:38,171 DEBUG [MemoryStore] Initialized net.sf.ehcache.store.MemoryStore for react
+08:42:38,187 DEBUG [ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE
+08:42:38,187 DEBUG [ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE_BYTES
+08:42:38,187 DEBUG [ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_DISK_SIZE
+08:42:38,187 DEBUG [ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LOCAL_DISK_SIZE_BYTES
+08:42:38,187 DEBUG [ExtendedStatisticsImpl] Mocking Pass-Through Statistic: WRITER_QUEUE_LENGTH
+08:42:38,187 DEBUG [ExtendedStatisticsImpl] Mocking Pass-Through Statistic: REMOTE_SIZE
+08:42:38,187 DEBUG [ExtendedStatisticsImpl] Mocking Pass-Through Statistic: LAST_REJOIN_TIMESTAMP
+08:42:38,203 DEBUG [ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_GET
+08:42:38,203 DEBUG [ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_PUT
+08:42:38,203 DEBUG [ExtendedStatisticsImpl] Mocking Operation Statistic: OFFHEAP_REMOVE
+08:42:38,203 DEBUG [ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_GET
+08:42:38,203 DEBUG [ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_PUT
+08:42:38,203 DEBUG [ExtendedStatisticsImpl] Mocking Operation Statistic: DISK_REMOVE
+08:42:38,218 DEBUG [ExtendedStatisticsImpl] Mocking Operation Statistic: XA_COMMIT
+08:42:38,218 DEBUG [ExtendedStatisticsImpl] Mocking Operation Statistic: XA_ROLLBACK
+08:42:38,218 DEBUG [ExtendedStatisticsImpl] Mocking Operation Statistic: XA_RECOVERY
+08:42:38,218 DEBUG [ExtendedStatisticsImpl] Mocking Operation Statistic: CLUSTER_EVENT
+08:42:38,218 DEBUG [ExtendedStatisticsImpl] Mocking Operation Statistic: NONSTOP
+08:42:38,218 DEBUG [Cache] Initialised cache: react
+08:42:38,218 DEBUG [ConfigurationHelper] CacheDecoratorFactory not configured. Skipping for 'react'.
+08:42:38,218 DEBUG [ConfigurationHelper] CacheDecoratorFactory not configured for defaultCache. Skipping for 'react'.
+08:42:38,234 DEBUG [ReactHandler] Server subscribing object id: 1
+08:42:38,249 DEBUG [ReactCacheEntryCreateListener] Event type: CREATED, key: 1
+08:42:38,249 DEBUG [ReactHandler] Server stored object id: 1 cache: org.ehcache.jcache.JCache@5fa214c6 name: react
+08:42:38,249 DEBUG [ItemSubscriber] Cient sessionID: jcDrJ7EbMQ5VKuAGEbyvgf4QItem: 1 changed: 0
+08:42:38,249 DEBUG [ClientEndPoint] Client received response. Message: changed
+08:42:38,249 DEBUG [ClientEndPoint] Client received response. Message: ok
+08:42:48,015 DEBUG [ReactiveTest] Test client: message update sent !
+08:42:48,015 DEBUG [ReactiveEndPoint] Server message received. Session Id: jcDrJ7EbMQ5VKuAGEbyvgf4Q, message type: update
+08:42:48,015 DEBUG [ReactHandler] Server updating object id: 1
+08:42:48,015 DEBUG [ReactHandler] Server updating item in cache
+08:42:48,015 DEBUG [ItemSubscriber] Cient sessionID: jcDrJ7EbMQ5VKuAGEbyvgf4QItem: 1 changed: 1
+08:42:48,015 DEBUG [ClientEndPoint] Client received response. Message: changed
+08:42:48,015 DEBUG [ClientEndPoint] Client received response. Message: ok
+08:42:58,030 DEBUG [ReactiveTest] Test: cleaning client end point connections.
+08:42:58,030 DEBUG [ClientEndPoint] Client session closed.
+08:42:58,093 DEBUG [ReactiveEndPoint] Session closed. Id: jcDrJ7EbMQ5VKuAGEbyvgf4Q

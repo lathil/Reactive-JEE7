@@ -1,0 +1,21 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+    updateCheck="false" monitoring="autodetect"
+    dynamicConfig="true" >
+
+	<!-- Disable for test ehcache.xml. Should go to the same place. -->
+	<diskStore path="java.io.tmpdir"/>
+	<!-- Sample cache named sampleCache2. Is eternal. Is diskPersistent but 
+		does not overflow to disk -->
+	<cache name="react" maxElementsInMemory="10000" maxEntriesLocalHeap="10000"
+		overflowToOffHeap="false" 
+		timeToLiveSeconds="3600"
+		timeToIdleSeconds="3600"
+		eternal="false"
+		overflowToDisk="false"
+		diskPersistent="false"
+		statistics="true"
+		>
+		<pinning store="localMemory"/>
+	</cache>
+</ehcache>
